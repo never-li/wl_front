@@ -1,0 +1,329 @@
+ //覆盖一些element-ui样式
+
+//表单
+$colorBottom:#f2f2f2;//底色
+$colorBorderBottom: #e8edf3;//边框底色
+$colorBorderLeft: rgba(0,0,0,0.07); //左边框
+$colorInterlaced1:#f2f2f2;//隔行色 单数
+$colorInterlaced2:#e8edf3;//隔行色 单数
+$colorSelected:#84C5FF;//表单选中色
+$colorMoving: #F0F8FF;//表单移动色
+//菜单
+$colorNavHover:#3c77bd;//移动色
+
+
+
+
+
+.el-button--primary{
+  background: #568de7;
+  border:1px solid #568de7;
+  border-radius: 2px;
+}
+.el-button--primary:focus, 
+.el-button--primary:hover{
+  background: $colorNavHover;
+  border:1px solid $colorNavHover;
+}
+
+
+ .el-menu--horizontal{
+   border-bottom:none; 
+ }
+.el-button{
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 5px 6px;
+}
+// // //input
+// .el-input--mini .el-input__inner,
+// .el-range-editor--small.el-input__inner,
+// .el-input--small .el-input__inner,
+.el-input__inner{
+  font-size: 12px;
+  padding: 0 5px;
+  height: 24px !important;
+  line-height: 24px !important;
+}
+.el-select-style .el-input.el-input--small.el-input--suffix .el-input__inner{
+   height: auto !important;;
+   line-height: auto !important;;
+}
+.el-form-item--small,
+.el-form-item__content{
+  line-height: 24px;
+}
+.el-form-item--mini.el-form-item, 
+.el-form-item--small.el-form-item{
+  margin-bottom: 10px;
+  margin-right: 0px;
+}
+.el-date-editor .el-range__icon,
+.el-date-editor .el-range-separator{
+  margin-top: -8px;
+}
+//label
+.el-form-item__label{
+  font-size: 12px;
+  padding-right: 5px;
+  line-height: 24px;
+}
+//表格
+.el-table td,
+.el-table th{
+  font-size: 12px;
+  border-bottom-color:$colorBorderBottom;
+  border-right: 1px solid $colorBorderLeft;
+  border-top: 1px solid $colorBorderBottom;
+  padding: 5px 0;
+}
+//单选框
+.el-form-item__content{
+  margin-left: 10px;
+  font-size: 12px;
+}
+.el-radio+.el-radio{
+  margin-left: 15px;
+}
+.el-radio__label{
+  font-size: 12px;
+  padding-left: 2px;
+}
+
+//翻页
+.el-pager li{
+  min-width: auto;
+}
+//选择框文字
+.el-select-dropdown__item{
+  font-size: 12px;
+}
+//选择时间
+.el-picker-panel__shortcut{
+  font-size: 12px;
+}
+.el-date-table td{
+  padding: 2px 0;
+}
+.el-date-range-picker__content{
+  padding: 5px;
+}
+//头部
+.el-card__header{
+  padding: 15px 20px;
+  span{
+    font-size: 14px;
+  }
+}
+.el-card__body{
+  padding: 10px;
+  .el-tabs__header{
+    margin: 0 0 10px;
+    
+  }
+}
+.el-tabs__item{
+  font-size: 12px;
+  padding: 0 12px !important;
+}
+.el-row-middle {
+  width: 100%;
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.7);
+  margin-bottom: 15px;
+}
+.el-main{
+  padding: 0;
+}
+
+.el-dialog__body{
+  padding: 10px 15px;
+}
+
+.el-menu--horizontal>.el-submenu .el-submenu__title{
+  color: #fff;
+  line-height: 35px;
+  height: 35px;
+  border-radius: 5px;
+  &:hover{
+    color: #fff;
+    background: $colorNavHover;
+    
+  }
+}
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title{
+  color: #fff;
+  // background: #60ACFB;
+  // font-weight: 700;
+  border-bottom: none;
+}
+.el-submenu__title i{
+  color: #fff;
+}
+.el-table, .el-table__expanded-cell{
+  background: #f2f2f2;
+}
+.el-select__tags{
+  top: 3px;
+  left: 0px;
+  -webkit-transform: translateY(0); 
+  transform: translateY(0);
+}
+.el-pagination__sizes .el-input .el-input__inner,
+.el-pagination button, .el-pagination span:not([class*=suffix]){
+  font-size: 12px;
+  line-height: 24px;
+  height: 24px;
+}
+.el-pager li{
+  line-height: 24px;
+  height: 24px;
+}
+.el-input-number{
+   line-height: 22px;
+}
+.el-input-number__decrease, .el-input-number__increase{
+  width: 30px;
+}
+
+//表单隔行色 单数
+.el-table th, .el-table tr{
+  background-color: $colorInterlaced1;
+}
+//表单隔行色 隅数
+.el-table--striped .el-table__body tr.el-table__row--striped td{
+  background-color: $colorInterlaced2;
+}
+//表单选中色
+.el-table--striped .el-table__body tr.el-table__row--striped.current-row td, .el-table__body tr.current-row>td, .el-table__body tr.hover-row.current-row>td, .el-table__body tr.hover-row.el-table__row--striped.current-row>td, .el-table__body tr.hover-row.el-table__row--striped>td, .el-table__body tr.hover-row>td{
+  background-color: $colorSelected !important;
+  .cell{
+    color: #f5f5f5;
+  }
+}
+//表单移动色
+.el-table--enable-row-hover .el-table__body tr:hover>td{
+  background: $colorMoving;
+}
+.el-button--danger.is-disabled, 
+.el-button--danger.is-disabled:active, 
+.el-button--danger.is-disabled:focus, 
+.el-button--danger.is-disabled:hover,
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:active, 
+.el-button--primary.is-disabled:focus, 
+.el-button--primary.is-disabled:hover{
+    color: #fff;
+    background-color: #ccc;
+    border-color: #ccc;
+}
+.el-card,
+.el-tabs--border-card{
+  background: $colorBottom;
+}
+.el-input__icon{
+  line-height: 27px;
+}
+
+.el-checkbox__input.is-disabled .el-checkbox__inner{
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner{
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+.el-checkbox__input.is-disabled.is-checked .el-checkbox__inner::after{
+  border-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+ .el-breadcrumb__inner, .el-breadcrumb__inner a{
+  font-weight: 400!important;
+}
+
+ .el-upload {
+   input[type="file"] {
+     display: none !important;
+   }
+ }
+
+ .el-upload__input {
+   display: none;
+ }
+
+ .cell {
+   .el-tag {
+     margin-right: 0px;
+   }
+ }
+
+ .small-padding {
+   .cell {
+     padding-left: 5px;
+     padding-right: 5px;
+   }
+ }
+
+ .fixed-width{
+  .el-button--mini{
+    padding: 7px 10px;
+    width: 60px;
+  }
+ }
+
+ .status-col {
+   .cell {
+     padding: 0 10px;
+     text-align: center;
+     .el-tag {
+       margin-right: 0px;
+     }
+   }
+ }
+
+ //暂时性解决dialog 问题 https://github.com/ElemeFE/element/issues/2461
+ .el-dialog {
+   transform: none;
+   left: 0;
+   position: relative;
+   margin: 0 auto;
+ }
+
+ //文章页textarea修改样式
+ .article-textarea {
+   textarea {
+     padding-right: 40px;
+     resize: none;
+     border: none;
+     border-radius: 0px;
+     border-bottom: 1px solid #bfcbd9;
+   }
+ }
+
+ //element ui upload
+ .upload-container {
+   .el-upload {
+     width: 100%;
+     .el-upload-dragger {
+       width: 100%;
+       height: 200px;
+     }
+   }
+ }
+
+//dropdown
+ .el-dropdown-menu{
+  a{
+    display: block
+  }
+}

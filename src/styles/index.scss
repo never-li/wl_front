@@ -1,0 +1,394 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './transition.scss';
+@import './element-ui.scss';
+@import './sidebar.scss';
+@import './btn.scss';
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+label {
+  font-weight: 700;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.no-padding {
+  padding: 0px !important;
+}
+
+.padding-content {
+  padding: 4px 0;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.block {
+  display: block;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.inlineBlock {
+  display: block;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+code {
+  background: #eef1f6;
+  padding: 15px 16px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 36px;
+  font-size: 15px;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  a {
+    color: #337ab7;
+    cursor: pointer;
+    &:hover {
+      color: rgb(32, 160, 255);
+    }
+  }
+}
+
+.warn-content {
+  background: rgba(66, 185, 131, .1);
+  border-radius: 2px;
+  padding: 16px;
+  padding: 1rem;
+  line-height: 1.6rem;
+  word-spacing: .05rem;
+  a {
+    color: #42b983;
+    font-weight: 600;
+  }
+}
+
+//main-container全局样式
+.app-container {
+  padding: 20px;
+}
+
+.components-container {
+  margin: 30px 50px;
+  position: relative;
+}
+
+.pagination-container {
+  text-align: right;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.sub-navbar {
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  padding-right: 20px;
+  transition: 600ms ease position;
+  background: linear-gradient(90deg, rgba(32, 182, 249, 1) 0%, rgba(32, 182, 249, 1) 0%, rgba(33, 120, 241, 1) 100%, rgba(33, 120, 241, 1) 100%);
+  .subtitle {
+    font-size: 20px;
+    color: #fff;
+  }
+  &.draft {
+    background: #d0d0d0;
+  }
+  &.deleted {
+    background: #d0d0d0;
+  }
+}
+
+.link-type,
+.link-type:focus {
+  color: #337ab7;
+  cursor: pointer;
+  &:hover {
+    color: rgb(32, 160, 255);
+  }
+}
+
+.filter-container {
+  .filter-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+  }
+}
+
+//refine vue-multiselect plugin
+.multiselect {
+  line-height: 16px;
+}
+
+.multiselect--active {
+  z-index: 1000 !important;
+}
+
+/** 全局颜色 - 字体 **/
+
+// ==> 颜色
+.color-red {
+  color: $red;
+}
+
+.color-yellow {
+  color: $yellow;
+}
+
+.color-light-blue{
+  color: #008de7;
+}
+
+.table-color-red {
+  color: #FF7979;
+}
+
+.table-color-green {
+  color: #66FF66;
+}
+
+.table-color-blue {
+  color: #3296FA;
+}
+
+// ==> 字体
+.fz-12 {
+  font-size: 12px;
+}
+
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+/** 布局样式 **/
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+/* 公用样式 */
+.w-184 { // 默认的 el-input 宽度
+  width: 184px !important;
+}
+
+.w-199 { // 默认的 el-select 宽度
+  width: 199px;
+}
+
+.w-238 { // 封装的
+  width: 238px;
+}
+.input-w-238{
+  width: 238px !important;
+}
+.input-w-168{
+  width: 168px !important;
+}
+.input-w-694{
+  width: 694px !important;
+}
+.search_label{
+  margin-left: 40px;
+}
+.form-wrap {
+  padding: 10px 5px 0 5px;
+  // box-shadow: 2px 4px 6px #d9dadc;
+  overflow: hidden;
+  // margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.btn-group-container {
+  width: 100%;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.table-header-bg {
+  background: #ccc !important;
+  color: #333;
+  line-height: 24px;
+  .cell{
+    white-space:nowrap;
+  }
+}
+.row-line-bg{
+  margin: 0 10px;
+}
+// 模块的组件切换过渡效果
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .2s ease;
+}
+
+.component-fade-enter, .component-fade-leave-to
+  /* .component-fade-leave-active for below version 2.1.8 */
+{
+  opacity: 0;
+}
+
+// 增加筛选表单的按钮
+.addIcon {
+  font-size: 18px;
+  color: #409EFF;
+  cursor: pointer;
+}
+
+// 表格选中颜色
+.table-select-bgcolor {
+  background: $table-select-color !important;
+}
+
+.el-table__row--striped.table-select-bgcolor td{
+  background: $table-select-color !important;
+}
+.table-select-bgcolor:hover td{
+  background: $table-select-color !important;
+}
+
+.tab-ellipsis{
+  width:100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+.tab-ellipsis{
+  .cell{
+    width:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+  }
+}
+.table-add-icon{
+  .cell{
+    width: 73% !important;
+    margin-top: -1px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 3px;
+    background: #568de7;
+    &:hover{
+      background:#409EFF
+    }
+  }
+}
+
+
+
